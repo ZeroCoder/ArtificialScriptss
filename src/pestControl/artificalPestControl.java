@@ -58,36 +58,5 @@ public class artificalPestControl extends ShadowScript implements PaintListener 
     public void onStop() {
     }
 
-    public void DrawText(Graphics g, String text, int x, int y, Color c) {
-        Graphics2D g2 = (Graphics2D) g;
-        Color color3 = new Color(51, 51, 51, 205);
-        Font font1 = new Font("Arial", 0, 12);
-        g.setFont(font1);
-        fontMetrics = g.getFontMetrics();
-        Rectangle textBox = new Rectangle(x, y - g.getFont().getSize(),
-                (int) fontMetrics.getStringBounds(text, g).getWidth() + 8,
-                (int) fontMetrics.getStringBounds(text, g).getHeight() + 5);
-        Paint defaultPaint = (Paint) g2.getPaint();
-        g2.setPaint(new RadialGradientPaint(new Point.Double(textBox.x
-                + textBox.width / 2.0D, textBox.y + textBox.height / 2.0D),
-                (float) (textBox.getWidth() / 2.0D),
-                new float[]{0.5F, 1.0F}, new Color[]{
-                new Color(color3.getRed(), color3.getGreen(), color3
-                        .getBlue(), 175),
-                new Color(0.0F, 0.0F, 0.0F, 0.8F)}));
-        g.fillRect(textBox.x, textBox.y + 12, textBox.width, textBox.height);
-        g2.setPaint((Paint) defaultPaint);
-        g.setColor(Color.BLACK);
-        g.drawRect(textBox.x, textBox.y + 12, textBox.width, textBox.height);
-        g.setColor(c);
-        g.drawString(text, x + 4, y + 15);
-        for (int i = 0; i < text.length(); i++) {
-            if (Character.isDigit(text.charAt(i))) {
-                g.setColor(new Color(255, 255, 255));
-                g.drawString("" + text.charAt(i),
-                        x + fontMetrics.stringWidth(text.substring(0, i)) + 4,
-                        y + 15);
-            }
-        }
-    }
+// DrawText Here for Paint :)
 }
