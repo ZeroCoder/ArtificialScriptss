@@ -15,7 +15,7 @@ import java.awt.*;
 /**
  * User: Pen
  */
-@Manifest(author = "Calle", category = SkillCategory.CRAFTING, description = "Crafts :)", scriptname = "ArtificialCrafter")
+@Manifest(author = "Farhad", category = SkillCategory.CRAFTING, description = "Crafts :)", scriptname = "ArtificialCrafter")
 
 public class artificalPestControl extends ShadowScript implements PaintListener {
 
